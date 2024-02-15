@@ -3,17 +3,11 @@ import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
 import { auth } from '@/auth'
-import { clearChats } from '@/app/actions'
 import { Button, buttonVariants } from '@/components/ui/button'
-import { Sidebar } from '@/components/sidebar'
-import { SidebarList } from '@/components/sidebar-list'
 import {
   IconNextChat,
   IconSeparator,
 } from '@/components/ui/icons'
-import { SidebarFooter } from '@/components/sidebar-footer'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { SidebarMobile } from './sidebar-mobile'
 import { SidebarToggle } from './sidebar-toggle'
@@ -32,12 +26,12 @@ async function UserOrLogin() {
         </>
       ) : (
         <Link href="/" target="_blank" rel="nofollow">
-          <IconNextChat className="w-6 h-6 mr-2 dark:hidden" inverted />
-          <IconNextChat className="hidden w-6 h-6 mr-2 dark:block" />
+          <IconNextChat className="size-6 mr-2 dark:hidden" inverted />
+          <IconNextChat className="hidden size-6 mr-2 dark:block" />
         </Link>
       )}
       <div className="flex items-center">
-        <IconSeparator className="w-6 h-6 text-muted-foreground/50" />
+        <IconSeparator className="size-6 text-muted-foreground/50" />
         {session?.user ? (
           <UserMenu user={session.user} />
         ) : (
